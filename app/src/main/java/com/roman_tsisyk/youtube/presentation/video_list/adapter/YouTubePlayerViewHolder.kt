@@ -1,4 +1,4 @@
-package com.roman_tsisyk.youtube.ui.video_list.adapter
+package com.roman_tsisyk.youtube.presentation.video_list.adapter
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView

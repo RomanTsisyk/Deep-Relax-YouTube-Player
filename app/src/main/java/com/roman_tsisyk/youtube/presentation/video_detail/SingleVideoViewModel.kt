@@ -1,13 +1,20 @@
-package com.roman_tsisyk.youtube.video_detail
+package com.roman_tsisyk.youtube.presentation.video_detail
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.roman_tsisyk.youtube.domain.repository.VideoRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class SingleVideoViewModel : ViewModel() {
+@HiltViewModel
+class SingleVideoViewModel @Inject constructor(
+    private val repository: VideoRepository
+) : ViewModel() {
 
     private val _videoId = MutableLiveData<String>()
     val videoId: LiveData<String> = _videoId
+
 
     fun processSharedText(sharedText: String) {
         if (isYouTubeLink(sharedText)) {
@@ -23,8 +30,15 @@ class SingleVideoViewModel : ViewModel() {
 
     private fun extractVideoId(url: String): String? {
         return when {
-            url.contains(YOUTUBE_URL_PREFIX) -> url.substringAfter(YOUTUBE_URL_PREFIX).take(VIDEO_ID_LENGTH)
-            url.contains(YOUTUBE_SHORT_URL_PREFIX) -> url.substringAfter(YOUTUBE_SHORT_URL_PREFIX).take(VIDEO_ID_LENGTH)
+            url.contains(YOUTUBE_URL_PREFIX) -> url.substringAfter(YOUTUBE_URL_PREFIX).take(
+                VIDEO_ID_LENGTH
+            )
+
+            url.contains(YOUTUBE_SHORT_URL_PREFIX) -> url.substringAfter(YOUTUBE_SHORT_URL_PREFIX)
+                .take(
+                    VIDEO_ID_LENGTH
+                )
+
             else -> null
         }
     }

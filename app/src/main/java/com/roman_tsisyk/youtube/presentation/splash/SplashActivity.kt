@@ -1,15 +1,14 @@
-package com.roman_tsisyk.youtube.ui.splash
+package com.roman_tsisyk.youtube.presentation.splash
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import com.roman_tsisyk.youtube.ui.video_list.VideoListActivity
-import com.roman_tsisyk.youtube.ui.video_list.VideoListViewModel
+import com.roman_tsisyk.youtube.presentation.video_list.VideoListActivity
 
+@SuppressLint("CustomSplashScreen")
 class SplashActivity : Activity() {
-
-    private lateinit var viewModel: VideoListViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

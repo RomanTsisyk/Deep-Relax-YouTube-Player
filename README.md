@@ -1,6 +1,6 @@
 # YTubeBackplay aka Deep Relax No-Sleep YouTube Player
 
-A personalized mobile application designed to offer an uninterrupted, ad-free experience of relaxation videos from YouTube. Perfect for those moments of relaxation where you just want peace without ads or interruptions.
+A personalized mobile application designed to offer an uninterrupted, ad-free experience of relaxation videos from YouTube. Perfect for those moments of relaxation where you just want peace without ads or interruptions. Initially developed for personal use, this app has been revamped to showcase professional standards and development best practices.
 
 ## Features
 
@@ -8,6 +8,18 @@ A personalized mobile application designed to offer an uninterrupted, ad-free ex
 - **Ad-Free:** No interruptions. Just pure relaxation.
 - **Simple UI:** Straightforward and user-friendly design.
 - **Custom Video Playlist:** Fetches a custom list of YouTube video IDs from a private GitHub repository. Update the list remotely via GitHub.
+
+---
+
+## What's New in v3.0 ( November 2024)
+- Transitioned to clean architecture for maintainability and scalability.
+- Integrated Hilt for efficient dependency management.
+- Fixed network and threading issues by adopting coroutines with proper Dispatchers.IO.
+- Updated UI for better usability and responsiveness.
+- Added robust error handling and scoped dependencies.
+- Prepared for future enhancements with improved code structure.
+
+---
 
 ## Setup
 
